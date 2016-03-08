@@ -9,6 +9,19 @@ window.addEventListener('load', function() {
 	
 	document.querySelector("#prijavniGumb").addEventListener('click',prijavi);
 	
+	function DodajOpomnik(event){
+		var nazivOpomnika = document.getElementById("naziv_opomnika").value;
+		var casOpomnika = document.getElementById("cas_opomnika").value;
+		document.getElementById("naziv_opomnika").value = '';
+		document.getElementById("cas_opomnika").value ='';
+		document.getElementById("opomniki").innerHTML += "<div class='opomnik'><div class='naziv_opomnika'>" + nazivOpomnika + "</div><div class='cas_opomnika'> Opomnik čez <span>" + casOpomnika + "</span> sekund.</div></div>"
+		
+	}
+	
+	document.querySelector("#dodajGumb").addEventListener('click',DodajOpomnik);
+	
+
+	
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
